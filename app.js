@@ -1,6 +1,6 @@
 const qrcode = require('qrcode-terminal');
 
-const { Client, LocalAuth } = require('whatsapp-web.js');
+const { Client, LocalAuth, MessageTypes } = require('whatsapp-web.js');
 const client = new Client({
     authStrategy: new LocalAuth()
 });
@@ -65,7 +65,16 @@ client.on('message', message => {
 
             // console.log("User input has correct format.");
 
-            client.sendMessage(`${tujuan + '@c.us'}`, `Kamu memiliki pesan rahasia\n\nDari : ${nama}\nTujuan : ${tujuan}\nPesan : ${pesan}`);
+            const sendMessage = async () => {
+                try {
+                  await client.sendMessage(`${tujuan + '@c.us'}`, `Kamu memiliki pesan rahasia\n\nDari : ${nama}\nTujuan : ${tujuan}\nPesan : ${pesan}`);
+                  message.reply('Pesan berhasil dikirim')
+                } catch (error) {
+                  console.log(`Gagal mengirim pesan error: ${error}`);
+                }
+              }
+
+              sendMessage();
 
         } else {
             // console.log("Format teks nya salah sayang.");
