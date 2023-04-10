@@ -73,7 +73,7 @@ client.on('message', message => {
                   await client.sendMessage(`${tujuan + '@c.us'}`, `Kamu memiliki pesan rahasia\n\nDari : ${nama}\nTujuan : ${tujuan}\nPesan : ${pesan}`);
                   message.reply('Pesan berhasil dikirim')
                 } catch (error) {
-                 console.log(`Gagal mengirim pesan error: ${error}`);
+                 message.reply(`Gagal mengirim pesan\nHarap Sesuaikan Dengan Format`);
                 }
               }
 
