@@ -85,7 +85,7 @@ client.on('message', message => {
             client.sendMessage(`${message.from}`, `!confess\n\nNama : masadepanmu\nTujuan : 081234567890\nPesan : sebenarnya aku suka sama kamu dari sma tapi malu buat ungkapin soalnya ga pede :(`)
         }
     }else {
-        client.sendMessage(`Saya hanyalah bot yang menyampaikan pesan orang lain kepada anda,saya tidak dapat membalas membalas pesan yang anda kirim kecuali anda mengirimkan pesan untuk saya kepada orang lain dengan perintah '!confess' atau '!help' `)
+        client.sendMessage(message.from, `Saya hanyalah bot yang menyampaikan pesan orang lain kepada anda,saya tidak dapat membalas membalas pesan yang anda kirim kecuali anda mengirimkan pesan untuk saya kepada orang lain dengan perintah '!confess' atau '!help' `)
     }
 
 
