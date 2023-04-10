@@ -56,7 +56,7 @@ client.on('message', message => {
                     tujuan = line.split(":")[1].trim();
                     if (tujuan.startsWith('08')) {
                         tujuan = `628${tujuan.slice(2)}`;
-                      }
+                    }
                 } else if (line.includes("Pesan")) {
                     pesan = line.split(":")[1].trim();
                 }
@@ -70,20 +70,22 @@ client.on('message', message => {
 
             const sendMessage = async () => {
                 try {
-                  await client.sendMessage(`${tujuan + '@c.us'}`, `Kamu memiliki pesan rahasia\n\nDari : ${nama}\nTujuan : 0${tujuan.slice(2)}\nPesan : ${pesan}`);
-                  message.reply('Pesan berhasil dikirim')
+                    await client.sendMessage(`${tujuan + '@c.us'}`, `Kamu memiliki pesan rahasia\n\nDari : ${nama}\nTujuan : 0${tujuan.slice(2)}\nPesan : ${pesan}`);
+                    message.reply('Pesan berhasil dikirim')
                 } catch (error) {
-                 message.reply(`Gagal mengirim pesan\nHarap Sesuaikan Dengan Format`);
+                    message.reply(`Gagal mengirim pesan\nHarap Sesuaikan Dengan Format`);
                 }
-              }
+            }
 
-              sendMessage();
+            sendMessage();
 
         } else {
             // console.log("Format teks nya salah sayang.");
             message.reply('Format teks nya salah.\nHarap masukkan seperti format berikut atau tinggal copy dan paste saja template nya.')
             client.sendMessage(`${message.from}`, `!confess\n\nNama : masadepanmu\nTujuan : 081234567890\nPesan : sebenarnya aku suka sama kamu dari sma tapi malu buat ungkapin soalnya ga pede :(`)
         }
+    }else {
+        client.sendMessage(`Saya hanyalah bot yang menyampaikan pesan orang lain kepada anda,saya tidak dapat membalas membalas pesan yang anda kirim kecuali anda mengirimkan pesan untuk saya kepada orang lain dengan perintah '!confess' atau '!help' `)
     }
 
 
