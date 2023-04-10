@@ -54,6 +54,9 @@ client.on('message', message => {
                     nama = line.split(":")[1].trim();
                 } else if (line.includes("Tujuan")) {
                     tujuan = line.split(":")[1].trim();
+                    if (tujuan.startsWith('08')) {
+                        tujuan = `628${tujuan.slice(2)}`;
+                      }
                 } else if (line.includes("Pesan")) {
                     pesan = line.split(":")[1].trim();
                 }
@@ -70,7 +73,7 @@ client.on('message', message => {
                   await client.sendMessage(`${tujuan + '@c.us'}`, `Kamu memiliki pesan rahasia\n\nDari : ${nama}\nTujuan : ${tujuan}\nPesan : ${pesan}`);
                   message.reply('Pesan berhasil dikirim')
                 } catch (error) {
-                  console.log(`Gagal mengirim pesan error: ${error}`);
+                 console.log(`Gagal mengirim pesan error: ${error}`);
                 }
               }
 
