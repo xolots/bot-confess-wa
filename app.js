@@ -70,7 +70,7 @@ client.on('message', message => {
 
             const sendMessage = async () => {
                 try {
-                  await client.sendMessage(`${tujuan + '@c.us'}`, `Kamu memiliki pesan rahasia\n\nDari : ${nama}\nTujuan : ${tujuan}\nPesan : ${pesan}`);
+                  await client.sendMessage(`${tujuan + '@c.us'}`, `Kamu memiliki pesan rahasia\n\nDari : ${nama}\nTujuan : 0${tujuan.slice(2)}\nPesan : ${pesan}`);
                   message.reply('Pesan berhasil dikirim')
                 } catch (error) {
                  message.reply(`Gagal mengirim pesan\nHarap Sesuaikan Dengan Format`);
