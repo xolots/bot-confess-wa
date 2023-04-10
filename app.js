@@ -82,7 +82,7 @@ client.on('message', message => {
         } else {
             // console.log("Format teks nya salah sayang.");
             message.reply('Format teks nya salah.\nHarap masukkan seperti format berikut atau tinggal copy dan paste saja template nya.')
-            client.sendMessage(`${message.from}`, `!confess\n\nNama : masadepanmu\nTujuan : 6281234567890\nPesan : sebenarnya aku suka sama kamu dari sma tapi malu buat ungkapin soalnya ga pede :(`)
+            client.sendMessage(`${message.from}`, `!confess\n\nNama : masadepanmu\nTujuan : 081234567890\nPesan : sebenarnya aku suka sama kamu dari sma tapi malu buat ungkapin soalnya ga pede :(`)
         }
     }
 
